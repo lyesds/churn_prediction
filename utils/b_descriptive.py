@@ -11,8 +11,8 @@ def plot():
     fig, axs = plt.subplots(2, 3, figsize=(20,10))
     for i in list(range(2)) :
         for j in list(range(3)) :
-            axs[i , j].title.set_text(categ[j+i*3])
-            axs[i , j].pie(ds[categ[j+i*3]].value_counts(normalize=True).values,
+            axs[i, j].title.set_text(categ[j+i*3])
+            axs[i, j].pie(ds[categ[j+i*3]].value_counts(normalize=True).values,
                            labels=ds[categ[j+i*3]].value_counts(normalize=True).index.values, startangle=90, autopct='%1.1f%%')
     plt.savefig("assets/pies_categ_variables.png",transparent=True)
     plt.show()

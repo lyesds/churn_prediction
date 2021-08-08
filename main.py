@@ -3,14 +3,26 @@ from churn_prediction.utils.c_supervised_classif import classify
 
 from sklearn.linear_model import LogisticRegression
 from sklearn.neighbors import KNeighborsClassifier
-from sklearn.ensemble import RandomForestClassifier
 from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.naive_bayes import GaussianNB
+from sklearn.svm import SVC
+from sklearn.neural_network import MLPClassifier
 
 
 # plot()
 
-models = [LogisticRegression(solver='lbfgs'), KNeighborsClassifier(),
-          RandomForestClassifier(), DecisionTreeClassifier()]
+models = [  # LogisticRegression(solver='lbfgs'),
+            # KNeighborsClassifier(),
+            # DecisionTreeClassifier(),
+             RandomForestClassifier() #,
+            # GaussianNB(),
+            # SVC(kernel='linear'),
+            # SVC(kernel='rbf'),
+            # SVC(kernel='poly'),
+            # SVC(kernel='sigmoid'),
+            # MLPClassifier(solver='lbfgs')
+        ]
 for mod in models:
-    model = mod
-    classify(model)
+    classify(mod)
+
