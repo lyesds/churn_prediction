@@ -15,7 +15,7 @@ from sklearn.neural_network import MLPClassifier
 models = [  # LogisticRegression(solver='lbfgs'),
             # KNeighborsClassifier(),
             # DecisionTreeClassifier(),
-             RandomForestClassifier() #,
+             RandomForestClassifier(max_features=None, n_estimators=50) #,
             # GaussianNB(),
             # SVC(kernel='linear'),
             # SVC(kernel='rbf'),

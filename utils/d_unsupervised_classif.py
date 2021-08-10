@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from sklearn.cluster import KMeans
+from sklearn.cluster import KMeans, MeanShift
 import matplotlib.pyplot as plt
 import seaborn as sns
 
@@ -37,6 +37,7 @@ sns.pairplot(X[X_num[10:]])
 plt.show()
 '''
 
+'''
 # Find optimal number of clusters
 inertia = []
 for i in range(1, 11):
@@ -50,6 +51,7 @@ plt.title('The elbow method')
 plt.xlabel('Number of clusters')
 plt.ylabel('Inertia')
 plt.show()
+'''
 
 '''
 kmeans = KMeans(n_clusters = 3, random_state = 0)
@@ -74,3 +76,22 @@ plt.title("Original target")
 plt.show()
 '''
 
+from joblib import dump
+from joblib import load
+
+# MeanShift
+'''meanshift = MeanShift()
+meanshift.fit(X)
+dump(meanshift, 'assets/meanshift.joblib')'''
+
+meanshift = load('assets/meanshift.joblib')
+print(np.unique(meanshift.labels_), type(meanshift.labels_), meanshift.labels_.shape)
+print(meanshift.get_params())
+
+classes = np.unique(meanshift.labels_).tolist()
+fig = plt.scatter(X.iloc[:, 10], X.iloc[:, 11], c=meanshift.labels_)
+plt.xlabel(X.iloc[:, 10].name)
+plt.ylabel(X.iloc[:, 11].name)
+plt.legend(handles=fig.legend_elements()[0], labels=classes)
+plt.title(meanshift)
+plt.show()
