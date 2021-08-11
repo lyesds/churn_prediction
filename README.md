@@ -31,10 +31,7 @@ The dataset can be downloaded on the following link: [Credit Card Customers](htt
 For end users, just go to the [dashboard]() online. Here how it looks like:
 
 <div align = "center">
-<video width="320" height="240" controls>
-  <source src=/assets/screencast1.mp4 type=video/mp4>
-Your browser does not support the video tag.
-</video>
+https://user-images.githubusercontent.com/83592404/129037996-b1a16a0a-2ee0-4e65-ad80-f2f151211ae8.mov
 </div>
 
 For developers, you'll need [Python](https://www.python.org/) installed on your computer to clone and run this application.
