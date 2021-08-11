@@ -31,7 +31,7 @@ The dataset can be downloaded on the following link: [Credit Card Customers](htt
 For end users, just go to the [dashboard]() online. Here how it looks like:
 
 <div align = "center">
-https://user-images.githubusercontent.com/83592404/129037996-b1a16a0a-2ee0-4e65-ad80-f2f151211ae8.mov
+https://user-images.githubusercontent.com/83592404/129040286-1dc45a15-74e9-4d1e-9c0e-1cf5b9c1bca3.mp4
 </div>
 
 For developers, you'll need [Python](https://www.python.org/) installed on your computer to clone and run this application.
