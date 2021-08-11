@@ -32,7 +32,7 @@ For end users, just go to the [dashboard]() online. Here how it looks like:
 
 <div align = "center">
 <video width="320" height="240" controls>
-  <source src="/assets/screencast1.mp4" type=video/mp4>
+  <source src=/assets/screencast1.mp4 type=video/mp4>
 Your browser does not support the video tag.
 </video>
 </div>
