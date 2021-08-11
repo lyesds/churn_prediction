@@ -3,10 +3,15 @@
 Explore and model bank customers behaviour with classification algorithms
 </h3>
 <img width = "200" src = /assets/logo.png alt="crm4bank">
-  <br>
-  <h3>crm4bank</h3>
-  <br>
 </div>
+
+
+<p align="center">
+  <a href="#the-project">Project</a> •
+  <a href="#data-source">Data source</a> •
+  <a href="#how-to-use">How To Use</a> •
+  <a href="#process">Process</a>
+</p>
 
 ### The project
 
@@ -17,7 +22,7 @@ in order to:
 
 A dashboard accessible to all interested people in the company will showcase the findings.
 
-### The data used
+### Data source
 
 The dataset can be downloaded on the following link: [Credit Card Customers](https://www.kaggle.com/sakshigoyal7/credit-card-customers).
 
@@ -25,7 +30,12 @@ The dataset can be downloaded on the following link: [Credit Card Customers](htt
 
 For end users, just go to the [dashboard]() online. Here how it looks like:
 
-
+<div align = "center">
+<video width="320" height="240" controls>
+  <source src="/assets/screencast1.webm" type="video/webm">
+Your browser does not support the video tag.
+</video>
+</div>
 
 For developers, you'll need [Python](https://www.python.org/) installed on your computer to clone and run this application.
 From your command line:
@@ -43,7 +53,7 @@ $ pip install requirements.txt
 $ streamlit run dashboard.py
 ```
 
-### The process
+### Process
 
 **Explore**
 - [X] Univariate
