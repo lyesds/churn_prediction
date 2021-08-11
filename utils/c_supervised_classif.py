@@ -24,11 +24,13 @@ def classify(model: str):
     #print(report)
     confus_matrix = metrics.confusion_matrix(y_test, predictions)
     #print(confus_matrix)
-    print('AUC score : \n', metrics.roc_auc_score(y_test, predictions))
-    fig = metrics.plot_roc_curve(model, X_test, y_test)
-    plt.plot([0, 1], [0, 1], 'r--')
+    # print('AUC score : \n', metrics.roc_auc_score(y_test, predictions))
+    fig, ax = plt.subplots(figsize=(7, 7))
+    # ax = metrics.plot_roc_curve(model, X_test, y_test)
+    ax.plot([0, 1], [0, 1], 'r--')
+    metrics.plot_roc_curve(model, X_test, y_test, ax=ax)
     plt.title(model)
     # plt.show()
-    print('Get params: \n', model.get_params())
-    return score_test, score_train, report, confus_matrix
+    # print('Get params: \n', model.get_params())
+    return score_test, score_train, report, confus_matrix, fig
     # print(f"Feature importance: {model.feature_importances_}")

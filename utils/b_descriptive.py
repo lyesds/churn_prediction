@@ -41,41 +41,26 @@ def histos(numvarname: str = 'Customer_Age'):
     sns.set(font_scale=1)
     varlist = ds.select_dtypes(exclude='object').columns
 
-    ''' fig, axs = plt.subplots(2, 1, figsize=(20, 10))
-    axs[0] = sns.histplot(ds[numvarname], kde=True)
-    plt.gca().update(dict(title='Histogram (all samples)', xlabel='', ylabel='Count'))
-    axs[1] = sns.boxplot(data=ds, y=numvarname, x='Attrition_Flag')
-    plt.title('Boxplot by attrition flag')'''
-
     fig, axs = plt.subplots(1, 2, figsize=(10, 5))
-    fig.suptitle(numvarname)
-
+    plt.subplots_adjust(wspace=.5)
+    fig.suptitle(numvarname.replace('_', ' '))
     sns.histplot(ax=axs[0], x=ds[numvarname], kde=True)
     axs[0].title.set_text('Histogram (all samples)')
-
     sns.boxplot(ax=axs[1], y=numvarname, x='Attrition_Flag', data=ds)
     axs[1].title.set_text('Boxplot by attrition flag')
+    axs[1].set_xlabel('')
 
     return fig, varlist
 
+def scatters(varname1: str = 'Customer_Age', varname2: str = 'Total_Revolving_Bal'):
+    sns.set(font_scale=1)
+    varlist1 = ds.iloc[:, 1:].columns.to_list()
 
-'''varlist = ds.select_dtypes(exclude='object').columns
-print(varlist)
-'''
-# print(ds.info())
+    fig, axs = plt.subplots(1, 1, figsize=(10, 5))
+    fig.suptitle(varname2.replace('_', ' ')+' by '+varname1.replace('_', ' '))
+    sns.scatterplot(ax=axs, x=varname1, y=varname2, hue='Attrition_Flag', data=ds)
 
-'''mu = x.mean()
-median = np.median(x)
-sigma = x.std()
-textstr = '\n'.join((
-    r'$\mu=%.2f$' % (mu, ),
-    r'$\mathrm{median}=%.2f$' % (median, ),
-    r'$\sigma=%.2f$' % (sigma, )))
+    return fig, varlist1
 
-ax.hist(x, 50)
-# these are matplotlib.patch.Patch properties
-props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
 
-# place a text box in upper left in axes coords
-ax.text(0.05, 0.95, textstr, transform=ax.transAxes, fontsize=14,
-        verticalalignment='top', bbox=props)'''
+# print(type(ds.iloc[:, 1:].columns.to_list()))
