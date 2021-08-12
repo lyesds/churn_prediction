@@ -2,7 +2,7 @@ import streamlit as st
 
 # import churn_prediction.utils.c_supervised_classif
 from utils.b_descriptive import piecharts, histos, scatters
-from utils.c_supervised_classif import classify
+from utils.c_supervised_classif import classify, probacluster
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.ensemble import RandomForestClassifier
@@ -13,6 +13,7 @@ plt.style.use('seaborn-muted')
 st.title("Bank customers churn prediction and clustering")
 st.sidebar.title("Bank customers classification")
 st.markdown("Welcome to this dashboard for bank customers insights!")
+st.markdown("Data courtesy of [sakshigoyal7@kaggle](https://www.kaggle.com/sakshigoyal7/credit-card-customers/)")
 st.sidebar.markdown("Explore, predict churn rate and create clusters of customers")
 
 # 1st part of the dashboard
@@ -61,4 +62,19 @@ if not st.sidebar.checkbox("Hide", True, key='7'):
         st.table(confus_matrix)
         st.write('\n ')
         st.write('\n ')
+        st.pyplot(fig)
+
+
+#  3rd part : clustering strategy
+st.sidebar.title("Clustering for a marketing strategy")
+select3 = st.sidebar.slider('Select the upper bound of estimated probability to be attrited (in %):', 100, 20)
+select4 = st.sidebar.slider('Now select the lower bound:', 0, select3)
+
+if not st.sidebar.checkbox("Hide", True):
+    st.markdown("### 3. Clustering for a marketing strategy")
+    st.markdown("See how many customers ...")
+    if select3:
+        fig, a, b = probacluster(model=RandomForestClassifier(n_estimators=50, max_features=None), up=select3, lo=select4)
+        st.write('Selected customers #:\n ', a)
+        st.write('Proportion:\n ', b)
         st.pyplot(fig)
