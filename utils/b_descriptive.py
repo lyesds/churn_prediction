@@ -10,7 +10,7 @@ ds = ds.iloc[:, 1:]  # remove IdClient
 
 props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
 
-def piecharts(subtype: int):
+def piecharts(subtype: int = 0):
     categ = ds.select_dtypes(include='object').columns
 
     if subtype == 0:  # Target

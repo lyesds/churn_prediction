@@ -1,4 +1,6 @@
-from churn_prediction.utils.b_descriptive import plot
+import matplotlib.pyplot as plt
+
+from churn_prediction.utils.b_descriptive import piecharts, histos, scatters
 from churn_prediction.utils.c_supervised_classif import classify
 
 from sklearn.linear_model import LogisticRegression
@@ -10,7 +12,11 @@ from sklearn.svm import SVC
 from sklearn.neural_network import MLPClassifier
 
 
-# plot()
+'''fig = piecharts(2)
+plt.show()'''
+fig = scatters('Months_on_book', 'Total_Revolving_Bal')
+plt.show()
+
 
 models = [  # LogisticRegression(solver='lbfgs'),
             # KNeighborsClassifier(),
@@ -23,6 +29,6 @@ models = [  # LogisticRegression(solver='lbfgs'),
             # SVC(kernel='sigmoid'),
             # MLPClassifier(solver='lbfgs')
         ]
-for mod in models:
+'''for mod in models:
     classify(mod)
-
+'''
