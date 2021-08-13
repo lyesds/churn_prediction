@@ -21,6 +21,7 @@ def preprocess(scale=True, oversample=True):
     X_categ = [column_name for column_name in categ]
     # Label encode them
     X = pd.get_dummies(X, columns=X_categ, prefix=X_categ, drop_first=True)
+    features = X.columns
 
     # split
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)  # , random_state=42)
@@ -36,4 +37,4 @@ def preprocess(scale=True, oversample=True):
         X_train = sc.fit_transform(X_train)
         X_test = sc.transform(X_test)
 
-    return X_train, X_test, y_train, y_test
+    return X_train, X_test, y_train, y_test, features

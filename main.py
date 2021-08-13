@@ -30,6 +30,6 @@ models = [  # LogisticRegression(solver='lbfgs'),
             # MLPClassifier(solver='lbfgs')
         ]
 for mod in models:
-    # classify(mod)
+    classify(mod)
     # probaviz(mod)
-    probacluster(model=mod, up=80, lo=80-30)
+    # probacluster(model=mod, up=80, lo=80-30)
