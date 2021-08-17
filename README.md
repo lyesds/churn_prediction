@@ -28,7 +28,7 @@ The dataset can be downloaded on the following link: [Credit Card Customers](htt
 
 ### How to use
 
-For end users, just go to the [dashboard]() online.
+For end users, just go to the [dashboard](https://share.streamlit.io/lyesds/churn_prediction/main/dashboard.py) online.
 Here is a short [video](https://drive.google.com/file/d/1-HITNWd6FTxbfezE8n1gyZ2IN_Wb1EET/view?usp=sharing) of how it looks like. Enjoy!
 
 For developers, you'll need [Python](https://www.python.org/) installed on your computer to clone and run this application.
